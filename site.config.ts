@@ -10,11 +10,11 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'ukko dev blog',
-  domain: 'nextjs-notion-starter-kit.transitivebullsh.it',
+  domain: 'ukko',
   author: 'UKKO',
 
   // open graph metadata (optional)
-  description: 'Example Next.js Notion Starter Kit Site',
+  description: 'ukko',
 
   // social usernames (optional)
   twitter: 'transitive_bs',

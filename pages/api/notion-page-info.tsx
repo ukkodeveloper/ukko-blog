@@ -94,13 +94,23 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   //   : publishedTime
   //   ? new Date(publishedTime)
   //   : undefined
+  const convertToKoreanDate = (dateString) => {
+    const date = new Date(dateString)
+    const year = date.getFullYear()
+    const month = date.toLocaleString('ko-KR', { month: 'long' })
+    const day = date.getDate()
+
+    const koreanDate = `${year}년 ${month} ${day}일`
+    return koreanDate
+  }
+
   const date =
     isBlogPost && datePublished
       ? `${datePublished.toLocaleString('en-US', {
           month: 'long'
         })} ${datePublished.getFullYear()}`
       : undefined
-  const detail = date || author || libConfig.domain
+  const detail = convertToKoreanDate(date) || author || libConfig.domain
 
   const pageInfo: NotionPageInfo = {
     pageId,

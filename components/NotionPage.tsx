@@ -122,13 +122,25 @@ const propertyDateValue = (
     const publishDate = data?.[0]?.[1]?.[0]?.[1]?.start_date
 
     if (publishDate) {
-      return `${formatDate(publishDate, {
+      const published = `${formatDate(publishDate, {
         month: 'long'
       })}`
+
+      return convertToKoreanDate(published)
     }
   }
 
   return defaultFn()
+}
+
+const convertToKoreanDate = (dateString) => {
+  const date = new Date(dateString)
+  const year = date.getFullYear()
+  const month = date.toLocaleString('ko-KR', { month: 'long' })
+  const day = date.getDate()
+
+  const koreanDate = `${year}년 ${month} ${day}일`
+  return koreanDate
 }
 
 const propertyTextValue = (
@@ -211,14 +223,6 @@ export const NotionPage: React.FC<types.PageProps> = ({
   }
 
   const title = getBlockTitle(block, recordMap) || site.name
-
-  console.log('notion page', {
-    isDev: config.isDev,
-    title,
-    pageId,
-    rootNotionPageId: site.rootNotionPageId,
-    recordMap
-  })
 
   if (!config.isServer) {
     // add important objects to the window global for easy debugging
