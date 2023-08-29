@@ -532,9 +532,14 @@ h1.notion-title {
 }
 
 .notion-aside-table-of-contents {
-  margin: 0 8px;
+
   border: 1px solid lightgray;
   padding: 8px;
+}
 
+.notion-aside {
+  margin-left: 32px;
+  margin-right: 8px;
+  align-items: end;
 }
 
