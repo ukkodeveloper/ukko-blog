@@ -1,3 +1,4 @@
+/* eslint-disable */
 /**
  * This file contains site-specifc style overrides for Notion elements from
  * react-notion-x.
@@ -82,12 +83,7 @@
 }
 
 .notion-collection-card {
-  border-radius: 16px;
-  box-shadow: none;
-}
-
-.notion-collection-card-cover img {
-  border-radius: 16px;
+  border-radius: 8px;
 }
 
 .notion-collection-card {
@@ -95,8 +91,8 @@
 }
 
 .notion-collection-card-cover {
-  border-radius: 16px;
-  box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);
+  border-radius: 8px 8px 1px 1px;
+  /*box-shadow: 2px 2px 8px 4px rgba(15, 15, 15, 0.1);*/
 }
 
 .notion-collection-card-cover {
@@ -265,7 +261,6 @@
   border-bottom-left-radius: 0.125rem;
   box-decoration-break: clone;
 
-  background-color: none;
 
   /* light yellow */
   background-image: linear-gradient(
@@ -398,7 +393,6 @@
 
 .notion-link {
   animation: moveBackground 3s infinite alternate;
-
   @keyframes moveBackground {
     0% {
       background-position: 50% 100%;
@@ -542,4 +536,5 @@ h1.notion-title {
   margin-right: 8px;
   align-items: end;
 }
+
 
