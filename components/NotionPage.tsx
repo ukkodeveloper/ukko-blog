@@ -154,6 +154,7 @@ const propertyTextValue = (
   return defaultFn()
 }
 
+// Todo: NotionPage
 export const NotionPage: React.FC<types.PageProps> = ({
   site,
   recordMap,
@@ -162,6 +163,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
 }) => {
   const router = useRouter()
   const lite = useSearchParam('lite')
+
+  console.dir(recordMap)
 
   const components = React.useMemo(
     () => ({
